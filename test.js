@@ -99,9 +99,9 @@ async function runDescription(pn){
     await page.waitForNavigation()//wait for the response
     let date=await page.evaluate(() =>{
         let result =[]
-        const datereceived='body > table > tbody > tr > td > table:nth-child(3) > tbody > tr > td:nth-child(2) > table:nth-child(2) > tbody > tr > td:nth-child(9) > div > font '
+        const datereceived='body > table > tbody > tr > td > table:nth-child(3) > tbody > tr > td:nth-child(2) > table:nth-child(2) > tbody > tr > td:nth-child(9)  '
         result= document.querySelector(datereceived).innerHTML
-        console.log(result)
+        console.log('date received', result)
 
         if(result){
             return result
