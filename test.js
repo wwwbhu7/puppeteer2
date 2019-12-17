@@ -5,7 +5,7 @@ var wb = XLSX.readFile(path.resolve(__dirname,'../parts.xlsx'))
 const REPORT_SHEET_NAME='Sheet1'
 const ws = wb.Sheets[REPORT_SHEET_NAME];
 rawdata=XLSX.utils.sheet_to_json(ws,{header:1})
-//check point 
+//check point
 //console.log(rawdata)
 // console.log(rawdata.length)
 // console.log(rawdata[0].length)
@@ -30,7 +30,7 @@ async function start() {
     for (i=1;i<rawdata.length;i++){
         PN=rawdata[i][0]
         starPN=rawdata[i][0]+'*'
-        console.log(PN) 
+        console.log(PN)
         console.log(starPN)
         //estimate if the PN is effective in EDOC;
         ReceiveDescription = await runDescription(starPN)
@@ -50,11 +50,11 @@ async function start() {
     }
     console.log(rawdata)//显示最新的excel
 }
-//function to get description. 
+//function to get description.
 async function runDescription(pn){
     const browser = await puppeteer.launch({
-        devtools:false,
-        headless:true,
+        devtools:true,
+        headless:false,
     })
     //insert PN into column and click the next button
     const page = await browser.newPage()
@@ -63,7 +63,7 @@ async function runDescription(pn){
         const selectorId = '#txtNumber'
         document.querySelector(selectorId).value = pn
         const next='body > table > tbody > tr > td > table:nth-child(3) > tbody > tr > td:nth-child(2) > form:nth-child(3) > table > tbody > tr:nth-child(2) > td:nth-child(2) > input[type=submit]'
-        document.querySelector(next).click()       
+        document.querySelector(next).click()
     },pn)
     //the following is the next page
     await page.waitForNavigation()//wait for the response
@@ -72,13 +72,13 @@ async function runDescription(pn){
         let description= document.querySelector(PNDescriptionSelector).innerHTML
         if(description){
             return description
-        }else{ 
+        }else{
             return 'notfounded'}
     })
     await page.close()
     await browser.close()
     return PNDescription
-  
+
 }
 //function to get date
  async function runDate(pn) {
@@ -96,18 +96,20 @@ async function runDescription(pn){
     },pn)
     console.log('first page logged')
     //thefollowing is the date page
-    await page.waitForNavigation()//wait for the response    
+    await page.waitForNavigation()//wait for the response
     let date=await page.evaluate(() =>{
         let result =[]
         const datereceived='body > table > tbody > tr > td > table:nth-child(3) > tbody > tr > td:nth-child(2) > table:nth-child(2) > tbody > tr > td:nth-child(9) > div > font '
         result= document.querySelector(datereceived).innerHTML
-        if(result){     
+        console.log(result)
+
+        if(result){
             return result
-        }else{ 
+        }else{
             return 'notfounded'}
     })
     console.log('second  page logged')
-    await page.close()
-    await browser.close()
+    // await page.close()
+    // await browser.close()
     return date
 }
