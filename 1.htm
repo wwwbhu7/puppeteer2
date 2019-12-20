@@ -1,0 +1,551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0101)http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartPmemoHistory.asp -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+ <TITLE>Report: Pmemo History - By Part Number</TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<META http-equiv="pragma" content="no-cache"> <LINK href="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/rdt_style_1.css" 
+rel="stylesheet" type="text/css"> 
+<STYLE type="text/css">
+<!--
+.style3 {font-size: 8pt}
+.style4 {font-size: 9px}
+.style6 {font-size: 10pt}
+.style8 {font-size: 7pt; }
+.style10 {font-size: 9pt}
+.style11 {color: #0000FF}
+.style12 {color: #FF0000}
+.style5 {color: #000000}
+.style15 {font-size: 12pt}
+-->
+</STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY vlink="#0000ff" onload="MM_preloadImages('http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c1_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c1_f3.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c1.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c2_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c2_f3.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c3_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c3_f3.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c4_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c4_f3.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c5_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c5_f3.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c6_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c6_f3.gif');"><!-- Outer most table --> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD><!-- Tab Bar -->         
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR>
+          <TD>
+<SCRIPT language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</SCRIPT>
+             
+            <CENTER>
+            <TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+              <TBODY>
+              <TR>
+                <TD width="1" height="72"></TD>
+                <TD width="800" valign="top" rowspan="2">
+                  <TABLE width="800" bgcolor="#000080" border="0" cellspacing="0" 
+                  cellpadding="0">
+                    <TBODY>
+                    <TR>
+                      <TD><IMG width="148" height="46" src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/kla_logo_onecolor_white.png"></TD>
+                      <TD width="650">&nbsp;</TD></TR>
+                    <TR>
+                      <TD><FONT color="#ffffff" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<FONT 
+                        size="2">RDT  </FONT><FONT size="1">Web 
+                        Site</FONT></FONT></TD>
+                      <TD>
+                        <TABLE width="606" border="0" cellspacing="0" 
+                        cellpadding="0">
+                          <TBODY>
+                          <TR><!-- Add Script to pull "tab" variable and set the down condition -->
+                            				    
+                            <TD><A onmouseover="MM_nbGroup('over','tab_bar_r1_c1','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c1_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c1_f3.gif',1);" 
+                              onmouseout="MM_nbGroup('out');" onclick="MM_nbGroup('down','navbar1','tab_bar_r1_c1','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c1_f3.gif',1);" 
+                              href="http://rdt.kla-tencor.com/rdt2/default.asp?Tab=0" 
+                              target="_parent"><IMG name="tab_bar_r1_c1" width="100" 
+                              height="26" alt="Rapid Home Page" src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/tab_bar_r1_c1.gif" 
+                              border="0"></A></TD>
+                            <TD><A onmouseover="MM_nbGroup('over','tab_bar_r1_c2','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c2_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c2_f3.gif',1);" 
+                              onmouseout="MM_nbGroup('out');" onclick="MM_nbGroup('down','navbar1','tab_bar_r1_c2','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c2_f3.gif',1);" 
+                              href="http://rdt.kla-tencor.com/rdt2/bso_flowchart/default.asp?Tab=1" 
+                              target="_parent"><IMG name="tab_bar_r1_c2" width="102" 
+                              height="26" alt="Rapid/eBeam Business System Overview" 
+                              src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/tab_bar_r1_c2.gif" 
+                              border="0"></A></TD>
+                            <TD><A onmouseover="MM_nbGroup('over','tab_bar_r1_c3','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c3_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c3_f3.gif',1);" 
+                              onmouseout="MM_nbGroup('out');" onclick="MM_nbGroup('down','navbar1','tab_bar_r1_c3','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c3_f3.gif',1);" 
+                              href="http://rdt.kla-tencor.com/rdt2/plc_flowchart/default.asp?Tab=2" 
+                              target="_parent"><IMG name="tab_bar_r1_c3" width="100" 
+                              height="26" alt="PLC Flow/Templates" src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/tab_bar_r1_c3.gif" 
+                              border="0"></A></TD>
+                            <TD><A onmouseover="MM_nbGroup('over','tab_bar_r1_c4','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c4_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c4_f3.gif',1);" 
+                              onmouseout="MM_nbGroup('out');" onclick="MM_nbGroup('down','navbar1','tab_bar_r1_c4','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c4_f3.gif',1);" 
+                              href="http://rdt.kla-tencor.com/rdt2/rdtsyncs/default.asp?Tab=3" 
+                              target="_parent"><IMG name="tab_bar_r1_c4" width="101" 
+                              height="26" alt="Rapid Product Sync Switchboard" 
+                              src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/tab_bar_r1_c4.gif" 
+                              border="0"></A></TD>
+                            <TD><A onmouseover="MM_nbGroup('over','tab_bar_r1_c5','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c5_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c5_f3.gif',1);" 
+                              onmouseout="MM_nbGroup('out');" onclick="MM_nbGroup('down','navbar1','tab_bar_r1_c5','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c5_f3.gif',1);" 
+                              href="http://rdt.kla-tencor.com/rdt2/edoc_ei/default.asp?Tab=4" 
+                              target="_parent"><IMG name="tab_bar_r1_c5" width="101" 
+                              height="26" onload="MM_nbGroup('init','navbar1', 'tab_bar_r1_c5','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c5.gif',1)" 
+                              alt="EDOC Processes" src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/tab_bar_r1_c5_f3.gif" 
+                              border="0"></A></TD>
+                            <TD><A onmouseover="MM_nbGroup('over','tab_bar_r1_c6','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c6_f2.gif','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c6_f3.gif',1);" 
+                              onmouseout="MM_nbGroup('out');" onclick="MM_nbGroup('down','navbar1','tab_bar_r1_c6','http://rdt.kla-tencor.com/rdt2/graphics/tab_images/tab_bar_r1_c6_f3.gif',1);" 
+                              href="http://rdt.kla-tencor.com/rdt2/project/default.asp?Tab=5" 
+                              target="_parent"><IMG name="tab_bar_r1_c6" width="101" 
+                              height="26" alt="Rapid Design Documentation" src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/tab_bar_r1_c6.gif" 
+                              border="0"></A></TD>
+                            <TD><IMG width="1" height="26" alt="" src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/spacer.gif" 
+                              border="0"></TD></TR></TBODY></TABLE></TD>
+                      <TD><IMG width="81" height="25" align="bottom" src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/edoc_logo1.jpg"></TD></TR></TBODY></TABLE></TD>
+                <TD width="100%" valign="top">
+                  <TABLE width="100%" bgcolor="#000080" border="0" cellspacing="0" 
+                  cellpadding="0"><!--DWLayoutTable-->           
+                    <TBODY>
+                    <TR>
+                      <TD width="100%" 
+                height="72">&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE><BR><!-- Table wrapping main section including menus --> 
+              
+      <TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR><!-- Adding menu to page -->             
+          <TD width="150" class="background" valign="top">
+            <META http-equiv="pragma" content="no-cache"> <LINK href="../style_sheets/rdt_style_1.css" 
+            rel="stylesheet" type="text/css"> 
+<STYLE type="text/css">
+<!--
+.style1 {font-size: 7pt}
+-->
+</STYLE>
+             
+<SCRIPT src="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/SpryMenuBar.js" type="text/javascript"></SCRIPT>
+             <LINK href="Report%20Pmemo%20History%20-%20By%20Part%20Number_files/SpryMenuBarVertical.css" 
+            rel="stylesheet" type="text/css"> 
+            <TABLE width="140" class="background" border="0" cellspacing="0" 
+            cellpadding="2">
+              <TBODY>
+              <TR>
+                <TD><FONT color="#0000ff"><STRONG>Search RDT 
+                  DB:</STRONG></FONT></TD></TR>
+              <FORM name="form1" action="http://rdt.kla-tencor.com/rdt2/common/scripts/search_engine.asp?txtProduct=EDOC&amp;Tab=4" 
+              method="post" target="_parent"></FORM>
+              <TR>
+                <TD><INPUT name="strSearch" type="text" size="11" maxlength="30"> 
+                            
+                <INPUT name="search_submit" type="submit" value="Go"></TD></TR><INPUT name="Flag" type="hidden" value="1"> 
+                  <INPUT name="SearchArea" type="hidden" value="All">     
+<INPUT name="txtProdSync" type="hidden" value="All">     
+              <TR>
+                <TD><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/search_engine.asp?Flag=0&amp;txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">Advanced       Search</A> </TD></TR>
+              <TR>
+                <TD valign="bottom">
+                  <DIV align="left"><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></DIV></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/ei_contactlist.asp?txtProduct=EDOC&amp;Tab=4" 
+                  target="_blank">EDOC/ES Contact List</A></TD></TR>
+              <TR>
+                <TD valign="bottom"><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></TD></TR>
+              <TR>
+                <TD height="25" bordercolor="#ffffff" bgcolor="#ffffff">
+                  <UL class="MenuBarVertical" id="MenuBar1">
+                    <LI><A class="MenuBarItemSubmenu">ProE/I</A>
+                    <UL>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=357&amp;Tab=4" 
+                      target="_parent">Initial</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=360&amp;Tab=4" 
+                      target="_parent">UnReleased</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=358&amp;Tab=4" 
+                      target="_parent">PreReleased</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=354&amp;Tab=4" 
+                      target="_parent">Active</A></LI>
+                      <LI><A target="_parent">**********</A></LI>
+                      <LI><A href="https://klatencor.sharepoint.com/sites/mcad/SitePages/mcad%20_Site/default.aspx" 
+                      target="_parent">MCAD Help Desk</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=302&amp;Tab=4" 
+                      target="_parent">EI Standards</A></LI></UL></LI></UL></TD></TR>
+              <TR>
+                <TD height="25" bordercolor="#ffffff" bgcolor="#ffffff">
+                  <UL class="MenuBarVertical" id="MenuBar2">
+                    <LI><A class="MenuBarItemSubmenu">Documentation</A>
+                    <UL>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=340&amp;Tab=4" 
+                      target="_parent">Initial</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=343&amp;Tab=4" 
+                      target="_parent">UnReleased</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=341&amp;Tab=4" 
+                      target="_parent">PreReleased</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=337&amp;Tab=4" 
+                      target="_parent">Active</A></LI>
+                      <LI><A target="_parent">**********</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiRptMainDoc.asp?txtProduct=EDOC&amp;Tab=4" 
+                      target="_parent">Reports</A></LI></UL></LI></UL></TD></TR>
+              <TR>
+                <TD height="25" bordercolor="#ffffff" bgcolor="#ffffff">
+                  <UL class="MenuBarVertical" id="MenuBar3">
+                    <LI><A class="MenuBarItemSubmenu">Eng Material</A>
+                    <UL>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=348&amp;Tab=4" 
+                      target="_parent">Initial</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=351&amp;Tab=4" 
+                      target="_parent">UnReleased</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=349&amp;Tab=4" 
+                      target="_parent">PreReleased</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=345&amp;Tab=4" 
+                      target="_parent">Active</A></LI>
+                      <LI><A target="_parent">**********</A></LI>
+                      <LI><A title="USA Region Mtr'l Reports" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiRptMainMat.asp?Reg=1&amp;Tab=4" 
+                      target="_parent">Reports: USA (Milpitas)</A></LI>
+                      <LI><A title="Signapore Region Mtr'l Reports" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiRptMainMat.asp?Reg=2&amp;Tab=4" 
+                      target="_parent">Reports: Singapore</A></LI>
+                      <LI><A title="Israel Region Mtr'l Reports" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiRptMainMat.asp?Reg=3&amp;Tab=4" 
+                      target="_parent">Reports: Israel</A></LI>
+                      <LI><A target="_parent">**********</A></LI>
+                      <LI><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPmemoBuyerInfo.asp?Tab=4" 
+                      target="_parent">Buyer's Info</A></LI></UL></LI></UL></TD></TR>
+              <TR>
+                <TD><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></TD></TR>
+              <TR>
+                <TD height="35"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiM1PNswitchboard.asp?txtProduct=EDOC&amp;Tab=4">Part 
+                  Number Switchboard</A></TD></TR>
+              <TR>
+                <TD height="35"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiReviewMain.asp?txtProduct=EDOC&amp;Tab=4">Part 
+                   Number: Review/Edit/Approve</A></TD></TR>
+              <TR>
+                <TD height="35"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiUploadForm.asp?txtProduct=EDOC&amp;Tab=4">File 
+                  Upload Form</A></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiBOMAddForm.asp?txtProduct=EDOC&amp;Tab=4">BOM 
+                  Add/Chg Form</A></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiRevChgForm.asp?txtProduct=EDOC&amp;Tab=4">Rev 
+                  Change Form</A></TD></TR>
+              <TR>
+                <TD><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></TD></TR>
+              <TR>
+                <TD height="25">
+                  <UL class="MenuBarVertical" id="MenuBar4">
+                    <LI><A class="MenuBarItemSubmenu" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartPmemoHistory.asp?Reg=1&amp;Tab=4&amp;txtPart=0770575-000#">Pmemo 
+                    Form: Region</A>
+                    <UL>
+                      <LI><A title="Mtr'l received in US" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPmemoForm.asp?txtProduct=EDOC&amp;Reg=1&amp;Tab=4" 
+                      target="_parent">US Region (mtr'l received)</A></LI>
+                      <LI><A title="Mtr'l received in Singapore" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPmemoForm.asp?txtProduct=EDOC&amp;Reg=2&amp;Tab=4" 
+                      target="_parent">SGP Region (mtr'l received)</A></LI>
+                      <LI><A title="Mtr'l received in Israel" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPmemoForm.asp?txtProduct=EDOC&amp;Reg=3&amp;Tab=4" 
+                      target="_parent">IL Region (mtr'l 
+                    received)</A></LI></UL></LI></UL></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPmemoBuyerInfo.asp?Tab=4" 
+                  target="_parent">Buyer's Info Section</A></TD></TR>
+              <TR>
+                <TD><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></TD></TR>
+              <TR>
+                <TD height="35"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_reg_main.asp?txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">EDOC Registration</A><BR><SPAN 
+                  class="style1">(on RDT)</SPAN> </TD></TR>
+              <TR>
+                <TD height="35"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=336&amp;txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">DE/ME Responsibility Matrix</A></TD></TR>
+              <TR>
+                <TD><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=516&amp;txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">Procedures</A></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=335&amp;txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">Doc     Templates</A></TD></TR>
+              <TR>
+                <TD height="35"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_pn_entry.asp?txtProduct=EDOC&amp;Tab=4">Doc 
+                  Entry Form</A><BR><SPAN class="style1">(non-RDT Controlled) 
+                  </SPAN></TD></TR>
+              <TR>
+                <TD height="35"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/m1_pn_request.asp?txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">New       Doc Number Form </A><BR><SPAN 
+                  class="style1">(RDT Controlled)</SPAN></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/doc_owner_main.asp?txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">Doc Owner Section</A></TD></TR>
+              <TR>
+                <TD><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiInternalProcs.asp?txtProduct=EDOC&amp;Tab=4">EI 
+                  Internal Processes</A></TD></TR>
+              <TR>
+                <TD height="25"><A href="http://rdt.kla-tencor.com/rdt2/common/scripts/com_sync_step.asp?SSID=344&amp;txtProduct=EDOC&amp;Tab=4" 
+                  target="_parent">EI Admin Procedures</A></TD></TR>
+              <TR>
+                <TD><FONT 
+                  color="#009900"><STRONG>****************</STRONG></FONT></TD></TR></TBODY></TABLE>
+<SCRIPT type="text/javascript">
+<!--
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgRight:"http://rdt.kla-tencor.com/rdt2//SpryAssets/SpryMenuBarRightHover.gif"});
+var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgRight:"http://rdt.kla-tencor.com/rdt2//SpryAssets/SpryMenuBarRightHover.gif"});
+var MenuBar3 = new Spry.Widget.MenuBar("MenuBar3", {imgRight:"http://rdt.kla-tencor.com/rdt2//SpryAssets/SpryMenuBarRightHover.gif"});
+var MenuBar4 = new Spry.Widget.MenuBar("MenuBar4", {imgRight:"../SpryAssets/SpryMenuBarRightHover.gif"});
+//-->
+</SCRIPT>
+                         </TD><!-- Adding main body section -->             
+          <TD valign="top">
+            <TABLE width="850" class="background" border="0" cellspacing="0" 
+            cellpadding="2">
+              <TBODY>
+              <TR>
+                <TD><SPAN class="style15"><FONT color="#0000ff">Pmemo History 
+                  for                      0770575-000<FONT size="2"> (all Pmemo 
+                  orders)</FONT>                     </FONT></SPAN></TD></TR>
+              <TR>
+                <TD>
+                  <HR>
+                </TD></TR>
+              <TR>
+                <TD><SPAN class="style11"><STRONG>* Disclaimer:</STRONG> If 
+                  the cost is in <FONT color="#0000ff">"blue font"</FONT>, then 
+                  it is the cost entered in the eProcure. This may change during 
+                  the PO ordering process. If the cost is in "<SPAN class="style12">red 
+                  font</SPAN>", then the cost is the estimated cost for the part 
+                  when the part was approved by the engineer and/or the cost 
+                  from SAP if entered into EDOC database. If the cost is in 
+                  "<SPAN class="style5">black font</SPAN>", then it is the 
+                  actual cost of the PO for the part. EDOC will enter the PO 
+                  cost after the part is received as the cost can change until 
+                  invoiced. PO costs entered starting in 2009, so see EDOC if 
+                  you have any questions about the cost data.</SPAN></TD></TR>
+              <TR>
+                <TD><SPAN class="style3">Click the Part Number to run the Kit 
+                  Location by Part Report.</SPAN></TD></TR></TBODY></TABLE>
+            <TABLE width="1200" class="background" border="1" cellspacing="0" 
+            cellpadding="0">
+              <TBODY>
+              <TR>
+                <TD width="20" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">#</DIV></TD>
+                <TD width="90" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Part Number</DIV></TD>
+                <TD width="30" height="30" bgcolor="#c0c0c0">
+                  <DIV align="center" class="style8">Link</DIV></TD>
+                <TD valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Description</DIV></TD>
+                <TD width="100" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Requestor</DIV></TD>
+                <TD width="50" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Qty Ordered</DIV></TD>
+                <TD width="50" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Qty Received</DIV></TD>
+                <TD width="50" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Due Date</DIV></TD>
+                <TD width="60" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Date Received</DIV></TD>
+                <TD width="30" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Lead Time</DIV></TD>
+                <TD width="90" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">PO#/ eProcure</DIV></TD>
+                <TD valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="center" class="style8">Kits for PO</DIV></TD>
+                <TD valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="center" class="style8">QLink</DIV></TD>
+                <TD width="100" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="center" class="style8">Vendor</DIV></TD>
+                <TD width="60" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Cost*</DIV></TD>
+                <TD width="100" valign="MIDDLE" bgcolor="#c0c0c0">
+                  <DIV align="CENTER" class="style8">Project</DIV></TD></TR>
+              <TR>
+                <TD width="20" height="30" align="MIDDLE" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        1                     
+                  </FONT></DIV></TD>
+                <TD width="90" height="30" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartToKit.asp?Reg=1&amp;Tab=4&amp;txtPN=0770575-000" 
+                  target="_blank">0770575-000</A>                     
+                  </FONT></DIV></TD>
+                <TD width="30">
+                  <DIV align="center"><FONT size="1"><A title="Click for Drawing" 
+                  href="http://rdt.kla-tencor.com/pdf/slx_drw_pdf/0770575-000_AB.pdf" 
+                  target="_blank">AB</A> </FONT></DIV></TD>
+                <TD height="30" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">							STRIP,SHIELD,BTM LEFT,FT1,X2
+                  						 </FONT></DIV></TD>
+                <TD width="100" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        Lobato, Rodolfo               
+                        </FONT></DIV></TD>
+                <TD width="50" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        2                     
+                  </FONT></DIV></TD>
+                <TD width="50" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        0                     
+                  </FONT></DIV></TD>
+                <TD width="50" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        2/10/2020&nbsp;               
+                        </FONT></DIV></TD>
+                <TD width="60" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        -                     
+                  </FONT></DIV></TD>
+                <TD width="30" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        N/A                     
+                  </FONT></DIV></TD>
+                <TD width="90" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><A title="Click for PO Report" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartPmemoHistory.asp?Reg=1&amp;txtProduct=EDOC&amp;Tab=4&amp;txtPOID=21255724" 
+                  target="_blank">21255724</A>                    /              
+                         <A title="Click for eProcure" href="http://eprocure.kla-tencor.com/eProcure/viewShoppingCart.php?&amp;shoppingCartNumber=0010379239" 
+                  target="_blank">0010379239</A>                     
+                  </FONT></DIV></TD>
+                <TD valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><A title="Click for Part in Kits by Specific PO" 
+                  href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartToKit.asp?Reg=1&amp;Tab=4&amp;txtPN=0770575-000&amp;txtPONo=21255724" 
+                  target="_blank">Kits for 21255724</A>                     
+                  </FONT></DIV></TD>
+                <TD align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><A title="Click for eProcure Quote" href="http://rdt.kla-tencor.com/pdf/Quotes/0010379239.zip" 
+                  target="_blank">QLink</A>                     </FONT></DIV></TD>
+                <TD width="100" height="30" align="CENTER" 
+                  valign="MIDDLE"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                      L AND B LABORATORIES, INC (USE 
+                  104700) </FONT></TD>
+                <TD width="60" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT color="#0000ff" face="Times New Roman, Times, serif" 
+                  size="1">$405.00					 </FONT></DIV></TD>
+                <TD width="60" align="CENTER" valign="MIDDLE"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                      FAST: X2 </FONT></TD></TR>
+              <TR>
+                <TD width="20" height="30" align="MIDDLE" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        2                     
+                  </FONT></DIV></TD>
+                <TD width="90" height="30" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><A href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartToKit.asp?Reg=1&amp;Tab=4&amp;txtPN=0770575-000" 
+                  target="_blank">0770575-000</A>                     
+                  </FONT></DIV></TD>
+                <TD width="30">
+                  <DIV align="center"><FONT size="1"><A title="Click for Drawing" 
+                  href="http://rdt.kla-tencor.com/pdf/slx_drw_pdf/0770575-000_AB.pdf" 
+                  target="_blank">AB</A> </FONT></DIV></TD>
+                <TD height="30" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">							STRIP,SHIELD,BTM LEFT,FT1,X2
+                  						 </FONT></DIV></TD>
+                <TD width="100" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        Wu, Jim                     
+                  </FONT></DIV></TD>
+                <TD width="50" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        3                     
+                  </FONT></DIV></TD>
+                <TD width="50" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        3                     
+                  </FONT></DIV></TD>
+                <TD width="50" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        11/20/2019&nbsp;              
+                         </FONT></DIV></TD>
+                <TD width="60" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        11/19/2019                    
+                   </FONT></DIV></TD>
+                <TD width="30" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><FONT color="#0000ff">98</FONT>                     
+                  </FONT></DIV></TD>
+                <TD width="90" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><A title="Click for PO Report" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartPmemoHistory.asp?Reg=1&amp;txtProduct=EDOC&amp;Tab=4&amp;txtPOID=21213714" 
+                  target="_blank">21213714</A>                    /              
+                         <A title="Click for eProcure" href="http://eprocure.kla-tencor.com/eProcure/viewShoppingCart.php?&amp;shoppingCartNumber=0010357339" 
+                  target="_blank">0010357339</A>                     
+                  </FONT></DIV></TD>
+                <TD valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1"><A title="Click for Part in Kits by Specific PO" 
+                  href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartToKit.asp?Reg=1&amp;Tab=4&amp;txtPN=0770575-000&amp;txtPONo=21213714" 
+                  target="_blank">Kits for 21213714</A>                     
+                  </FONT></DIV></TD>
+                <TD align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                        N/A                     
+                  </FONT></DIV></TD>
+                <TD width="100" height="30" align="CENTER" 
+                  valign="MIDDLE"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                      MEANS ENGINEERING, INC 
+                </FONT></TD>
+                <TD width="60" height="30" align="CENTER" valign="MIDDLE">
+                  <DIV align="center"><FONT color="#0000ff" face="Times New Roman, Times, serif" 
+                  size="1">$197.00					 </FONT></DIV></TD>
+                <TD width="60" align="CENTER" valign="MIDDLE"><FONT face="Times New Roman, Times, serif" 
+                  size="1">                      FAST: X2 
+            </FONT></TD></TR></TBODY></TABLE>
+            <TABLE width="600" class="background" border="0" cellspacing="0" 
+            cellpadding="0">
+              <TBODY>
+              <TR>
+                <TD height="40"><A class="style10 style3 style3" href="http://rdt.kla-tencor.com/rdt2/edoc_ei/scripts/eiPartPmemoHistory.asp?Reg=1&amp;Flag=1&amp;Tab=4&amp;TypeFlag=Part">Run 
+                  Another Pmemo History Report</A></TD></TR></TBODY></TABLE><!-- Closing main section table --> 
+                        </TD></TR></TBODY></TABLE><!-- Closing outer most table -->    
+     </TD></TR></TBODY></TABLE></BODY></HTML>
