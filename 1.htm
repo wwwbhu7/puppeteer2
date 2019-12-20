@@ -549,3 +549,10 @@ var MenuBar4 = new Spry.Widget.MenuBar("MenuBar4", {imgRight:"../SpryAssets/Spry
                   Another Pmemo History Report</A></TD></TR></TBODY></TABLE><!-- Closing main section table --> 
                         </TD></TR></TBODY></TABLE><!-- Closing outer most table -->    
      </TD></TR></TBODY></TABLE></BODY></HTML>
+<script>
+  const datereceived='table > tbody > tr > td > table:nth-child(3) > tbody > tr > td:nth-child(2) > table:nth-child(2) > tbody > tr > td:nth-child(9) >div > font'
+  document.querySelectorAll(datereceived).forEach(ele => {
+    console.log('Date Received:', ele.innerHTML.trim())
+
+  })
+</script>
